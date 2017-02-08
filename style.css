@@ -1,12 +1,12 @@
-//fonts
+/*fonts */
 @import url('https://fonts.googleapis.com/css?family=Flavors|Griffy|Holtwood+One+SC|Rock+Salt|Ultra');
-// font-family: 'Flavors', cursive;
+/* font-family: 'Flavors', cursive;
 // font-family: 'Griffy', cursive; -- h2
 // font-family: 'Rock Salt', cursive; -- nope
 // font-family: 'Ultra', serif;
 // font-family: 'Holtwood One SC', serif; -- h1
 
-//color scheme http://www.color-hex.com/color-palette/23864
+//color scheme http://www.color-hex.com/color-palette/23864 */
 $background: #ff9200;
 $button-color: #bbbbbb;
 $button-outline: 2px solid #aaaaaa;
