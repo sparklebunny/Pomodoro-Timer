@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+	
+
+<!--Notes:
+** use hourglass as timer
+** allow user to click and enter # of minutes for break and clock 
+** as well as giving + and - sign to increase/decrease time 
+-->
+
+<body>
+	<h1 class="headline">Get to Work!</h1>
+	<h2 class="subhead">Pomodoro Style</h2>
+	<section>		
+		<!-- break settings -->
+		<div id="break" class="timer">
+			<h3 class="clock-heading">Break</h3>
+			<button class="btn" id="brdecrease" value="-">-</button>
+			<input type="text" class="timer-input" value="0"></input>
+			<button class="btn" id="brincrease" value="+">+</button>
+			<div class="breakOperators">
+				<button class="btn" value="start" id="brstart">Start</button>
+				<button class="btn" value="stop" id="brstop">Stop</button>
+				<button class="btn" value="reset" id="brreset">Reset</button>
+			</div>
+		</div>
+	
+	<!-- pomodoro settings -->
+		<div id="pomodoro" class="timer">
+			<h3 class="clock-heading">Pomodoro</h3>
+			<button class="btn" value="-">-</button>
+			<input type="text" class="timer-input" value="0"></input>
+			<button class="btn" value="+">+</button>
+		</div>
+
+	</section>
+	
+	<section>
+		<!-- hourglass timer here...
+		** draw with CSS
+		** JS to animate sand -->
+		<div id="countdown">00:00
+		</div>
+			<!-- reset button -->
+		<div class="breakOperators">
+			<button class="btn" value="start" id="pomostart">Start</button>
+			<button class="btn" value="stop" id="pomostop">Stop</button>
+			<button class="btn" value="reset" id="pomoreset">Reset</button>
+		</div>
+	</section>
+	
+	<footer>Created with &#9749 and <span>&#9829</span> by <a href="http://www.github.com/sparklebunny">Sparklebunny</a> &#128048;
+	</footer>
+
+</body>
+
+</html>

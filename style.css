@@ -1,0 +1,100 @@
+//fonts
+@import url('https://fonts.googleapis.com/css?family=Flavors|Griffy|Holtwood+One+SC|Rock+Salt|Ultra');
+// font-family: 'Flavors', cursive;
+// font-family: 'Griffy', cursive; -- h2
+// font-family: 'Rock Salt', cursive; -- nope
+// font-family: 'Ultra', serif;
+// font-family: 'Holtwood One SC', serif; -- h1
+
+//color scheme http://www.color-hex.com/color-palette/23864
+$background: #ff9200;
+$button-color: #bbbbbb;
+$button-outline: 2px solid #aaaaaa;
+$button-radius: 4px;
+$button-hover: #46c3d3;
+$primary-blue: #005595;
+$secondary-blue: #46c3d3;
+
+
+body {
+	text-align: center;
+	background: #ff9200;
+}
+
+h1, h2, h3 {
+	color: $primary-blue;
+}
+
+h1 {
+	font-size: 6rem;
+	font-family: 'Holtwood One SC', serif;
+}
+
+h2 {
+	font-size: 5rem;
+	font-style: italic;
+	font-family: 'Griffy', cursive;
+	margin-bottom: 8rem;
+}
+
+h3 {
+	font-size: 2rem;
+	margin-bottom: 2rem;
+	font-family: 'Holtwood One SC', serif;
+	letter-spacing: .2rem;
+}
+
+input {
+	height: 4rem;
+	width: 15rem;
+	text-align: center;
+	font-weight: 700;
+	font-size: 2.5rem;
+}
+
+#break, #pomodoro {
+	margin-bottom: 5rem;
+}
+
+.breakOperators {
+	margin-top: 2rem;
+	#brstart, #pomostart {
+		margin-right: 2rem;
+	}
+	#brreset, #pomoreset {
+		margin-left: 2rem;
+	}
+}
+
+button {
+	border-radius: 4px;
+	border: $button-outline;
+	color: $button-color;
+}
+
+button:hover {
+	background: $button-hover;
+}
+
+.btn {
+	color: #000000;
+	font-weight: 700;
+	font-family: 'Griffy', cursive;
+	letter-spacing: .2rem;
+}
+
+#countdown {
+	font-size: 5rem;
+}
+
+#reset {
+	margin: 2rem;
+}
+
+footer {
+	text-align: center;
+	margin-top: 5rem;
+	span {
+		color: #ff0000;
+	}
+}
