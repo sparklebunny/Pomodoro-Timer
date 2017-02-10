@@ -24,13 +24,23 @@
 <body>
 	<h1 class="headline">Get to Work!</h1>
 	<h2 class="subhead">Pomodoro Style</h2>
-	<section>		
+	
+	<section>
+		<!-- hourglass timer here...
+		** draw with CSS
+		** JS to animate sand -->
+		<div id="countdown">00:00
+		</div>
+	</section>
+	
+	<section class="timers">		
 		<!-- break settings -->
 		<div id="break" class="timer">
 			<h3 class="clock-heading">Break</h3>
 			<button class="btn" id="brdecrease" value="-">-</button>
-			<input type="text" class="timer-input" value="0"></input>
+			<input type="text" id="breakInput" class="timer-input" value="0" placeholder="0"></input>
 			<button class="btn" id="brincrease" value="+">+</button>
+			<!-- Break buttons -->
 			<div class="breakOperators">
 				<button class="btn" value="start" id="brstart">Start</button>
 				<button class="btn" value="stop" id="brstop">Stop</button>
@@ -41,26 +51,19 @@
 	<!-- pomodoro settings -->
 		<div id="pomodoro" class="timer">
 			<h3 class="clock-heading">Pomodoro</h3>
-			<button class="btn" value="-">-</button>
-			<input type="text" class="timer-input" value="0"></input>
-			<button class="btn" value="+">+</button>
+			<button id="pomominus" class="btn" value="-">-</button>
+			<input type="text" id="pomoInput" class="timer-input" value="0" placeholder="0"></input>
+			<button id="pomoplus" class="btn" value="+">+</button>
+			<!-- Pomo buttons -->
+			<div class="breakOperators">
+				<button class="btn" value="start" id="pomostart">Start</button>
+				<button class="btn" value="stop" id="pomostop">Stop</button>
+				<button class="btn" value="reset" id="pomoreset">Reset</button>
+			</div>
 		</div>
-
 	</section>
 	
-	<section>
-		<!-- hourglass timer here...
-		** draw with CSS
-		** JS to animate sand -->
-		<div id="countdown">00:00
-		</div>
-			<!-- reset button -->
-		<div class="breakOperators">
-			<button class="btn" value="start" id="pomostart">Start</button>
-			<button class="btn" value="stop" id="pomostop">Stop</button>
-			<button class="btn" value="reset" id="pomoreset">Reset</button>
-		</div>
-	</section>
+
 	
 	<footer>Created with &#9749 and <span>&#9829</span> by <a href="http://www.github.com/sparklebunny">Sparklebunny</a> &#128048;
 	</footer>

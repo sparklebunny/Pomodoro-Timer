@@ -34,7 +34,7 @@ h2 {
 	font-size: 5rem;
 	font-style: italic;
 	font-family: 'Griffy', cursive;
-	margin-bottom: 8rem;
+	margin-bottom: 4rem;
 }
 
 h3 {
@@ -44,16 +44,30 @@ h3 {
 	letter-spacing: .2rem;
 }
 
+#countdown {
+	font-size: 13rem;
+}
+
+.timers {
+	margin: 0 auto;
+}
+
 input {
-	height: 4rem;
-	width: 15rem;
+	height: 3.5rem;
+	width: 7rem;
 	text-align: center;
 	font-weight: 700;
 	font-size: 2.5rem;
 }
 
-#break, #pomodoro {
-	margin-bottom: 5rem;
+#break {
+	margin: 3rem;
+	float: left;
+}
+
+#pomodoro {
+	margin: 2rem;
+	float: right;
 }
 
 .breakOperators {
@@ -83,9 +97,6 @@ button:hover {
 	letter-spacing: .2rem;
 }
 
-#countdown {
-	font-size: 5rem;
-}
 
 #reset {
 	margin: 2rem;
@@ -93,7 +104,8 @@ button:hover {
 
 footer {
 	text-align: center;
-	margin-top: 5rem;
+	margin: 5rem;
+	padding: 20rem;
 	span {
 		color: #ff0000;
 	}
