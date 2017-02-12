@@ -29,7 +29,13 @@
 		<!-- hourglass timer here...
 		** draw with CSS
 		** JS to animate sand -->
-		<div id="countdown">00:00
+		<div id="countdown"><span class="minutes">00</span>:<span class="seconds">00</span>
+		<span class="timeout_message_show" style="display:none;">Time's Up!</span>
+		</div>
+		<div class="breakOperators">
+			<button class="btn" value="start" id="start">Start</button>
+			<button class="btn" value="stop" id="stop">Stop</button>
+			<button class="btn" value="reset" id="reset">Reset</button>
 		</div>
 	</section>
 	
@@ -40,12 +46,6 @@
 			<button class="btn" id="brdecrease" value="-">-</button>
 			<input type="text" id="breakInput" class="timer-input" value="0" placeholder="0"></input>
 			<button class="btn" id="brincrease" value="+">+</button>
-			<!-- Break buttons -->
-			<div class="breakOperators">
-				<button class="btn" value="start" id="brstart">Start</button>
-				<button class="btn" value="stop" id="brstop">Stop</button>
-				<button class="btn" value="reset" id="brreset">Reset</button>
-			</div>
 		</div>
 	
 	<!-- pomodoro settings -->
@@ -54,12 +54,6 @@
 			<button id="pomominus" class="btn" value="-">-</button>
 			<input type="text" id="pomoInput" class="timer-input" value="0" placeholder="0"></input>
 			<button id="pomoplus" class="btn" value="+">+</button>
-			<!-- Pomo buttons -->
-			<div class="breakOperators">
-				<button class="btn" value="start" id="pomostart">Start</button>
-				<button class="btn" value="stop" id="pomostop">Stop</button>
-				<button class="btn" value="reset" id="pomoreset">Reset</button>
-			</div>
 		</div>
 	</section>
 	
