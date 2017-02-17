@@ -3,7 +3,7 @@
 // break and timer:
 // DONE: click - to decrease min by 1 (0-5 on break; 0-25 on pomo) 
 // DONE: click + to increase min by 1 (0-5 on break; 0-25 on pomo)
-// display amount of time of each timer - convert to min/seconds
+// display amount of time of each timer - convert to min/seconds using setInterval()
 // click Start to begin timer 
 // show visual of time lapse (sand filling hourglass)
 // click stop to stop timer
@@ -17,104 +17,122 @@ $(document).ready(function() {
 
 	var breakMinutes = 5;
 	var pomoMinutes = 25;
-	var breakStop = false;
-	var pomoStop = false;
-	var breakReset = "";
-	var pomoReset = "";
+	
 	
 	// initializing the display to value of breakMinutes
 	$("#breakInput").val(breakMinutes);
 	// initializing the display to value of breakMinutes
-	$("#pomoInput").val(pomoMinutes).html(".minutes");
+	$("#pomoInput").val(pomoMinutes);
 	
 
 	// decrease break by 1
 	$("#brdecrease").on("click", function(){
-		if(breakMinutes > 0 && breakMinutes < 6) {
-			breakMinutes -= 1;
+		if(breakMinutes > 0 && breakMinutes < 16) {
+			breakMinutes--;
 			$("#breakInput").val(breakMinutes);
 		}
 	});
 	
 	//increase break by 1
 	$("#brincrease").on("click", function(){
-		if(breakMinutes >= 0 && breakMinutes < 5) {
-			breakMinutes += 1;
+		if(breakMinutes >= 0 && breakMinutes < 15) {
+			breakMinutes++;
 			$("#breakInput").val(breakMinutes);
 		}
 	});
 
 	// decrease Pomo by 1
 	$("#pomominus").on("click", function(){
-		if(pomoMinutes > 0 && pomoMinutes < 26) {
-			pomoMinutes -= 1;
+		if(pomoMinutes > 0 && pomoMinutes < 59) {
+			pomoMinutes--;
 			$("#pomoInput").val(pomoMinutes);
 		}
+
+		//display current value on large timer
+		document.querySelector("#countdownTime").innerHTML = pomoMinutes;
 	});
 	
 	//increase Pomo by 1
 	$("#pomoplus").on("click", function(){
-		if(pomoMinutes >= 0 && pomoMinutes < 25) {
-			pomoMinutes += 1;
-			$("#pomoInput").val(pomoMinutes).append("span.minutes");
+		if(pomoMinutes >= 0 && pomoMinutes < 59) {
+			pomoMinutes++;
+			$("#pomoInput").val(pomoMinutes);
 		}
+
+		//display current value on large timer
+		document.querySelector("#countdownTime").innerHTML = pomoMinutes;
 	});
+
+
+
+	function countDown(time) {
+
+		var interval = setInterval(function(){
+			document.getElementById("countdownTime").innerHTML = time;
+			time-- || clearInterval(interval);
+		}, 1000)
+	}
+
+	//starts the pomodoro clock
+	var startPomoClock = $("#start").on("click", function(){
+
+		countDown(pomoMinutes);
+
+	});
+///
+/// Need this to work
+	var stopPomoClock = $("#stop").on("click", function(){
+
+		var timer = setTimeout(countDown, 1000);
+		clearTimeout(timer);		
+	});
+///
+/// Need this to work
+	var resetPomoClock = $("#reset").on("click", function(){
+	
+		var currentPomoMinutes = (document.querySelector("#countdownTime").innerHTML = pomoMinutes);
+
+		countDown(currentPomoMinutes);
+
+	});
+		
+
+
+
 
 	// converting minutes to min/seconds
 
-	var fragmentTime;
-	var minutes = $("span.minutes").text(); //get value from pomoMinutes
-	var seconds = $("span.seconds").text(); // starts with 0 
-
-	minutes = parseInt(minutes);
-	seconds = parseInt(seconds);
-
-	// if for some reason they app goes haywire and isn't a number; return 00 for minutes & 00 for seconds
-	if (isNaN(minutes)) {
-		minutes = 00;
-	}
-
-	if (isNaN(seconds)) {
-		seconds = 00;
-	}
-
-
-	fragmentTime = (60 * minutes) + (seconds);
-
-	displayMinutes = $("span.minutes");
-	displaySeconds = $("span.seconds");
-
-	startTimer(fragmentTime, displayMinutes, displaySeconds);
-
-	function startTimer(duration, displayMinutes, displaySeconds) {
-		var timer = duration;
-		displayMinutes, displaySeconds;
-
-		var timeIntervalID = setInterval(function(){
-			minutes = parseInt(timer / 60, 10);
-			seconds = parseInt(timer % 60, 10);
-
-			minutes = minutes < 10 ? "0" + minutes : minutes;
-			seconds = seconds < 10 ? "0" + seconds : seconds;
-
-			displayMinutes.textContent = minutes;
-			displaySeconds.textContent = seconds;
-
-			if (--timer < 0) {
-				timer = 0;
-			} else if (timer == 0) {
-				clearInterval(timeIntervalID);
-				// add audio chime here
-			}
-
-		});
-	}
 
 
 
 
+////// NOTES BELOW
+
+
+//var countdownSeconds = 0; or countdownMinutes 
 
 
 
 
 }); // FIN
+
+// state: is timer running or not
+// when pomo up - switch to break time
+// is pomo running?
+// is break running?
+// both can't run at same time 
+
+
+
+// action: click start btn to start timer
+// set interval of pomodoro
+// clicking plus btn --- (state ->) adds 60 seconds to timer -- account for 59
+// clicking minus btn --- (state ->) subtracts 60 seconds from timer -- account for 59
+// when resetting timer, reset to last number chosen for countdown
+// sound chime at end of timers 
+
+
+
+
+
+
